@@ -1,0 +1,288 @@
+/* --------------------------------------------------------------------
+   CSS VARIABLES FOR TYPEWRITER TIMING
+   Line 1: "👋 Hey! I’m" (9 characters) @ 0.1s/char = 0.9s
+   Line 2: "Chandrashekhar B" (17 characters) @ 0.1s/char = 1.7s
+-------------------------------------------------------------------- */
+:root {
+    /* FIX: Reverting to exact character count for predictable timing and proper step calculation */
+    --typing-speed-1: 0.9s; /* 9 characters * 0.1s */
+    --typing-steps-1: 9;    /* Exact character count */
+
+    --typing-speed-2: 1.7s;
+    --typing-steps-2: 17;
+    
+    /* Delay for Line 2 start (when Line 1 finishes) */
+    --delay-line-2: var(--typing-speed-1);
+    
+    /* Delay for final infinite blink (when Line 2 finishes) */
+    --total-duration: calc(var(--typing-speed-1) + var(--typing-speed-2));
+    --cursor-color: #6366F1;
+    --cursor-width: .15em;
+    --blink-cycle: 0.75s; /* The duration of one blink cycle */
+}
+
+/* --------------------------------------------------------------------
+   GLOBAL BASE STYLES
+-------------------------------------------------------------------- */
+/*
+  FIX: Adds padding to the top when scrolling to an ID
+  This prevents the sticky header from covering section titles
+*/
+html {
+    scroll-padding-top: 70px; 
+}
+
+body {
+    /* Set default font and smooth scroll behavior */
+    font-family: 'Inter', sans-serif;
+    color: #E5E7EB; /* Light text */
+    scroll-behavior: smooth;
+}
+
+.section-padding {
+    /* Define consistent vertical spacing for main content sections */
+    /* UPDATED: This class is no longer used for top padding, only bottom */
+    padding-bottom: 6rem;
+}
+
+/* --------------------------------------------------------------------
+   NAVIGATION & LINKS
+-------------------------------------------------------------------- */
+/* Style for header social links AND nav links */
+.nav-link:hover {
+    color: var(--cursor-color); /* Indigo accent on hover */
+}
+
+/* --------------------------------------------------------------------
+   PROJECTS & SKILLS CARD STYLING
+-------------------------------------------------------------------- */
+.project-card {
+    /* Base styling and transition for the project cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    /* Hover effects to give the card a "lift" and a subtle glow */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(99, 102, 241, 0.25);
+}
+
+.tag {
+    /* Styling for the technology tags */
+    background-color: #374151; /* Darker tag background */
+    color: #CFCFD5; /* Brighter tag text */
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* --------------------------------------------------------------------
+   CONTACT SECTION
+-------------------------------------------------------------------- */
+/* UPDATED: Dark gradient background for contact card */
+.cta-gradient {
+    /* A subtle dark purple gradient */
+    background-image: linear-gradient(135deg, #2c2a4a, #151721);
+}
+
+/* --------------------------------------------------------------------
+   NEW BUTTON: For Email Me (Transparent)
+-------------------------------------------------------------------- */
+.email-button {
+    background-color: transparent; /* UPDATED: Transparent bg */
+    border: 1px solid var(--cursor-color); /* Themed border */
+    padding: 5px;
+    position: relative;
+    width: 7.2em;
+    height: 2.8em; /* FIXED: Set height to match other button */
+    transition: 0.5s;
+    font-size: 17px;
+    border-radius: 0.4em;
+    cursor: pointer; /* Added cursor pointer */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.email-button p {
+    position: absolute;
+    top: 0.5em; /* Adjusted for new height */
+    left: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+    color: var(--cursor-color); /* Themed text */
+    font-weight: 500; /* Added font weight */
+}
+
+.email-button svg {
+    position: absolute;
+    top: 0.65em; /* Adjusted for new height */
+    right: 0.5em;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
+    height: 1.2em; /* Adjusted icon size */
+    fill: #fff
+}
+
+.email-button:hover p {
+    left: 0.6em;
+    color: #fff
+}
+
+.email-button:hover svg {
+    opacity: 1;
+}
+
+.email-button:hover {
+    background-color: var(--cursor-color); /* Themed hover background */
+}
+
+/* --------------------------------------------------------------------
+   NEW BUTTON: For Download Resume (Transparent)
+-------------------------------------------------------------------- */
+.cssbuttons-io-button {
+    background: transparent; /* UPDATED: Transparent bg */
+    border: 1px solid var(--cursor-color); /* UPDATED: Color to match email button */
+    color: white; /* UPDATED: Show text by default */
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.4em; /* UPDATED: Thinner border radius */
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: none; /* UPDATED: Removed shadow */
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.cssbuttons-io-button .icon {
+    background: transparent; /* UPDATED: Transparent icon bg */
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.4em; /* UPDATED: Thinner border radius */
+    box-shadow: none; /* UPDATED: Removed shadow */
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover {
+      background: var(--cursor-color); /* UPDATED: Fill color on hover */
+      color: white; /* UPDATED: Show text on hover */
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+    background: white; /* UPDATED: Show white bg on hover */
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: white; /* UPDATED: Icon color by default */
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+    color: var(--cursor-color); /* UPDATED: Icon color on hover */
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
+/* --------------------------------------------------------------------
+   CORRECTED: Typewriter effect for Hero Section (Seamless Flow)
+-------------------------------------------------------------------- */
+
+/* === LINE 1: TYPES, THEN CURSOR DIES (IMPROVED) === */
+.hero-line-1 {
+    overflow: hidden; 
+    border-right: var(--cursor-width) solid var(--cursor-color);
+    white-space: nowrap; 
+    margin: 0;
+    letter-spacing: .1em;
+    width: 0; /* Starts hidden */
+    
+    /* 1. Typing: Reveals text and holds final width. (Only controls width) */
+    /* 2. Cursor Blink: Blinks during typing. */
+    /* 3. Stop Cursor: Runs instantly (0.001s) exactly when typing finishes to set border-color: transparent. */
+    animation: 
+      typing-line-1 var(--typing-speed-1) steps(var(--typing-steps-1), end) forwards,
+      blink-line-1 .75s step-end infinite,
+      stop-cursor 0.001s linear var(--typing-speed-1) forwards; /* FIX APPLIED: Stops blink instantly after typing duration */
+}
+
+
+/* === LINE 2: APPEARS, TYPES, THEN CURSOR BLINKS INFINITELY === */
+.hero-line-2 {
+    font-family: "Work Sans", sans-serif;
+    background: linear-gradient(to right, #6366F1, #a370f0, #f8b195);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0; /* Start fully hidden */
+    width: 0; /* Start with no width for typing effect */
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* 1. Typing: Starts when line 1 finishes (var(--delay-line-2)) */
+    /* 2. Final Cursor Blink: Starts when line 2 finishes (var(--total-duration)), and blinks INFINITELY */
+    animation: 
+      typing-line-2 var(--typing-speed-2) steps(var(--typing-steps-2), end) var(--delay-line-2) forwards,
+      final-blink .75s step-end var(--total-duration) infinite;
+}
+
+
+/* === KEYFRAMES === */
+
+/* Line 1 Typing: Only controls width. The blink color is handled by other animations. */
+@keyframes typing-line-1 {
+    0% { width: 0; }
+    100% { width: max-content; } 
+}
+
+/* Line 2 Typing: Reveals full text and keeps the border (cursor) on. */
+@keyframes typing-line-2 {
+    0% { 
+        width: 0; 
+        opacity: 1; 
+        border-right: var(--cursor-width) solid var(--cursor-color); /* Cursor appears instantly as typing starts */
+    }
+    100% { 
+        width: 100%; 
+        opacity: 1; 
+        border-right: var(--cursor-width) solid var(--cursor-color); /* Keeps cursor at end */
+    }
+}
+
+/* Line 1 Blink: Standard typewriter blink */
+@keyframes blink-line-1 {
+    from, to { border-color: transparent }
+    50% { border-color: var(--cursor-color); }
+}
+
+/* NEW: Keyframe to instantly stop the cursor from blinking by setting its color transparent */
+@keyframes stop-cursor {
+    to { border-right-color: transparent; }
+}
+
+
+/* Final infinite blinking cursor at the end of line 2 */
+@keyframes final-blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--cursor-color); }
+}
