@@ -25,8 +25,8 @@
    GLOBAL BASE STYLES
 -------------------------------------------------------------------- */
 /*
-  FIX: Adds padding to the top when scrolling to an ID
-  This prevents the sticky header from covering section titles
+ FIX: Adds padding to the top when scrolling to an ID
+ This prevents the sticky header from covering section titles
 */
 html {
     scroll-padding-top: 70px; 
@@ -110,7 +110,7 @@ body {
     margin: 0;
     padding: 0;
     transition: .5s;
-    color: var(--cursor-color); /* Themed text */
+    color: #fff; /* FIX: Changed text color to white by default */
     font-weight: 500; /* Added font weight */
 }
 
@@ -223,7 +223,7 @@ body {
     animation: 
       typing-line-1 var(--typing-speed-1) steps(var(--typing-steps-1), end) forwards,
       blink-line-1 .75s step-end infinite,
-      stop-cursor 0.001s linear var(--typing-speed-1) forwards; /* FIX APPLIED: Stops blink instantly after typing duration */
+      stop-cursor 0.001s linear var(--typing-speed-1) forwards; 
 }
 
 
@@ -237,7 +237,8 @@ body {
     opacity: 0; /* Start fully hidden */
     width: 0; /* Start with no width for typing effect */
     overflow: hidden;
-    white-space: nowrap;
+    /* FIX: Removed white-space: nowrap to allow wrapping on mobile */
+    /* white-space: nowrap; */ 
 
     /* 1. Typing: Starts when line 1 finishes (var(--delay-line-2)) */
     /* 2. Final Cursor Blink: Starts when line 2 finishes (var(--total-duration)), and blinks INFINITELY */
@@ -263,6 +264,8 @@ body {
         border-right: var(--cursor-width) solid var(--cursor-color); /* Cursor appears instantly as typing starts */
     }
     100% { 
+        /* Changed width to 100% to ensure it fits the container width correctly 
+           after animation is done, allowing the line break to occur naturally. */
         width: 100%; 
         opacity: 1; 
         border-right: var(--cursor-width) solid var(--cursor-color); /* Keeps cursor at end */
@@ -285,4 +288,12 @@ body {
 @keyframes final-blink {
     from, to { border-color: transparent }
     50% { border-color: var(--cursor-color); }
+}
+
+/* Media query to allow the line to stay nowrap on screens larger than mobile, 
+   reintroducing the original typewriter effect aesthetic for desktop */
+@media (min-width: 640px) {
+     .hero-line-2 {
+         white-space: nowrap; 
+     }
 }
