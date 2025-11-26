@@ -1,305 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CHANDRASHEKHAR B | AI Engineer</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Inter Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandrashekhar B | AI/ML Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-dark-bg text-gray-100">
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'primary-indigo': '#6366F1',
-            'dark-bg': '#151721',
-            'card-bg': '#1F2232',
-          },
-          keyframes: {
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          },
-          animation: {
-            'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
-          }
-        },
-      },
-    };
-    window.onload = () => lucide.createIcons();
-  </script>
-
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-dark-bg/90 backdrop-blur-sm shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap">
-      <div class="flex items-center space-x-2">
-        <span class="text-xl font-bold text-primary-indigo">AI</span>
-        <span class="text-xl font-bold">Engineer</span>
-      </div>
-
-      <!-- Nav links -->
-      <nav class="flex flex-wrap justify-center gap-2 text-sm font-medium mt-3 sm:mt-0">
-        <a href="#home" class="nav-link p-1">Home</a>
-        <a href="#projects" class="nav-link p-1">Projects</a>
-        <a href="#skills" class="nav-link p-1">Skills</a>
-        <a href="#experience" class="nav-link p-1">Experience</a>
-        <a href="#about-me" class="nav-link p-1">About Me</a>
-        <a href="#contact" class="nav-link p-1">Contact</a>
-      </nav>
-
-      <!-- Icons (visible on all breakpoints) -->
-      <div class="flex items-center space-x-4 mt-3 sm:mt-0">
-        <a href="https://github.com/chandhu1255" target="_blank" class="nav-link">
-          <i data-lucide="github" class="w-5 h-5"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/chandhu1255" target="_blank" class="nav-link">
-          <i data-lucide="linkedin" class="w-5 h-5"></i>
-        </a>
-        <a href="mailto:bchandrashekhar619@gmail.com" class="nav-link">
-          <i data-lucide="mail" class="w-5 h-5"></i>
-        </a>
-        <button class="nav-link"><i data-lucide="sun" class="w-5 h-5"></i></button>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-7xl mx-auto">
-
-    <!-- HERO -->
-    <section id="home" class="flex flex-col items-start justify-center min-h-[75vh] px-4 sm:px-8 py-12 sm:py-20">
-      <div class="space-y-6 text-left">
-        <p class="text-primary-indigo text-2xl sm:text-3xl font-medium hero-line-1 inline-block">👋 Hey! I’m</p>
-        <h1 class="hero-line-2 text-4xl sm:text-6xl font-extrabold leading-tight tracking-tighter whitespace-normal sm:whitespace-nowrap">
-          Chandrashekhar B
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-400 max-w-lg">
-          Passionate about building intelligent systems that make a real-world impact, driving innovation at the intersection of AI, data, and human insight.
-        </p>
-
-        <div class="flex flex-wrap gap-3 pt-4">
-          <a href="#projects" class="px-5 py-3 bg-primary-indigo text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 flex items-center gap-2">
-            <span>View Projects</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-          <a href="https://github.com/chandhu1255" target="_blank" class="px-5 py-3 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:bg-gray-800 transition duration-300 flex items-center gap-2">
-            <i data-lucide="github" class="w-4 h-4"></i>
-            <span>GitHub</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Open to Work -->
-    <section id="open-to-work" class="px-4 sm:px-6 lg:px-8 mb-8">
-      <div class="flex items-center gap-4">
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-primary-indigo flex items-center justify-center font-bold text-lg text-white shadow-lg">
-          <span>CB</span>
-        </div>
-        <div>
-          <div class="text-lg font-semibold text-white">Chandrashekhar B</div>
-          <div class="text-gray-400 text-sm">Devanahalli, Bengaluru • Open to Work</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      <div class="mb-8">
-        <h2 class="text-3xl sm:text-4xl font-bold">Core Projects</h2>
-        <p class="text-gray-400 mt-2 max-w-xl">Selected work showcasing applied machine learning, production systems, and measurable impact.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Face Recognition -->
-        <div class="project-card bg-transparent p-6 rounded-xl shadow-lg border border-white/10">
-          <img src="public/face_recognition_project.png" alt="Face Recognition" class="rounded-lg mb-4 w-full h-auto object-cover sm:aspect-[2/1] aspect-auto" onerror="this.src='https://placehold.co/600x300/1F2232/6366F1?text=Image+Missing'; this.onerror=null;">
-          <h3 class="text-xl font-semibold mb-1">Face Recognition and Attendance System</h3>
-          <p class="text-gray-400 text-sm mb-3">Automating attendance via real-time facial detection and recognition algorithms using OpenCV.</p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="tag">Python</span>
-            <span class="tag">OpenCV</span>
-            <span class="tag">Data Preprocessing</span>
-          </div>
-          <a href="../projects/face-recognition.html" class="text-primary-indigo hover:underline text-sm font-medium flex items-center gap-1">
-            <span>Case Study / View Details</span>
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-          </a>
-        </div>
-
-        <!-- Digit Recognition -->
-        <div class="project-card bg-transparent p-6 rounded-xl shadow-lg border border-white/10">
-          <img src="public/digit_recognition_project.png" alt="Digit Recognition" class="rounded-lg mb-4 w-full h-auto object-cover sm:aspect-[2/1] aspect-auto" onerror="this.src='https://placehold.co/600x300/1F2232/6366F1?text=Image+Missing'; this.onerror=null;">
-          <h3 class="text-xl font-semibold mb-1">Handwritten Digit Recognition</h3>
-          <p class="text-gray-400 text-sm mb-3">A CNN-based model trained on the MNIST dataset to predict handwritten digits from 0–9.</p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="tag">Python</span>
-            <span class="tag">CNNs</span>
-            <span class="tag">Keras</span>
-          </div>
-          <a href="../projects/digit-recognition.html" class="text-primary-indigo hover:underline text-sm font-medium flex items-center gap-1">
-            <span>Case Study / View Details</span>
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-          </a>
-        </div>
-
-        <!-- VLLM -->
-        <div class="project-card bg-transparent p-6 rounded-xl shadow-lg border border-white/10">
-          <img src="public/Vllm_project.png" alt="VLLM Project" class="rounded-lg mb-4 w-full h-auto object-cover sm:aspect-[2/1] aspect-auto" onerror="this.src='https://placehold.co/600x300/1F2232/6366F1?text=Image+Missing'; this.onerror=null;">
-          <h3 class="text-xl font-semibold mb-1">Refined Visual Search (VLLMs)</h3>
-          <p class="text-gray-400 text-sm mb-3">Integrated Visual Large Language Models (VLLMs) to enhance image-text interaction for improved insights.</p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="tag">VLLMs</span>
-            <span class="tag">Python</span>
-            <span class="tag">Generative AI</span>
-          </div>
-          <a href="../projects/vllm-search.html" class="text-primary-indigo hover:underline text-sm font-medium flex items-center gap-1">
-            <span>Case Study / View Details</span>
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills, Experience & About -->
-    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-
-      <!-- Skills -->
-      <div id="skills" class="mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-3">Skills & Tech Stack</h2>
-        <p class="text-gray-400 mb-6 max-w-2xl">Pragmatic tool selection, strong fundamentals, and production-first engineering.</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="p-6 rounded-xl bg-transparent shadow-md border border-white/10">
-            <div class="flex items-center gap-2 mb-3 text-primary-indigo">
-              <i data-lucide="code" class="w-6 h-6"></i>
-              <h3 class="text-lg font-semibold">Languages</h3>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <span class="tag">Python</span>
-              <span class="tag">C</span>
-              <span class="tag">Java</span>
-            </div>
-          </div>
-
-          <div class="p-6 rounded-xl bg-transparent shadow-md border border-white/10">
-            <div class="flex items-center gap-2 mb-3 text-primary-indigo">
-              <i data-lucide="package" class="w-7 h-7"></i>
-              <h3 class="text-lg font-semibold">Frameworks/Libraries</h3>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <span class="tag">PyTorch</span>
-              <span class="tag">Keras</span>
-              <span class="tag">OpenCV</span>
-              <span class="tag">NumPy/Pandas</span>
-            </div>
-          </div>
-
-          <div class="p-6 rounded-xl bg-transparent shadow-md border border-white/10">
-            <div class="flex items-center gap-2 mb-3 text-primary-indigo">
-              <i data-lucide="brain" class="w-6 h-6"></i>
-              <h3 class="text-lg font-semibold">ML/AI Core</h3>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <span class="tag">CNNs</span>
-              <span class="tag">SVM</span>
-              <span class="tag">Data Analysis</span>
-              <span class="tag">Model Evaluation</span>
-            </div>
-          </div>
-
-          <div class="p-6 rounded-xl bg-transparent shadow-md border border-white/10">
-            <div class="flex items-center gap-2 mb-3 text-primary-indigo">
-              <i data-lucide="award" class="w-6 h-6"></i>
-              <h3 class="text-lg font-semibold">Certifications</h3>
-            </div>
-            <div class="flex flex-wrap gap-3 text-sm">
-              <span class="tag">OCI GenAI Prof.</span>
-              <span class="tag">NCVET/NASSCOM (L5)</span>
-              <span class="tag">Coursera: Deep Learning</span>
-              <span class="tag">Python Programming</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience -->
-      <div id="experience" class="mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Experience</h2>
-
-        <div class="grid grid-cols-1 gap-6">
-          <div class="p-6 rounded-xl bg-transparent shadow-md border border-white/10">
-            <h4 class="text-lg font-semibold text-primary-indigo">AI & Data Science Intern</h4>
-            <p class="text-gray-300 font-medium">Aqmenz Automation Pvt. Ltd. (Sep 2023 - Nov 2023)</p>
-            <ul class="list-disc list-inside text-gray-400 mt-3 text-sm space-y-1">
-              <li>Contributed to end-to-end AI project development: data preprocessing, model training, and deployment.</li>
-              <li>Integrated ML models into automation pipelines and helped productionize proof-of-concepts.</li>
+    <header>
+        <nav>
+            <div class="logo">Chandrashekhar B</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-          </div>
-        </div>
-      </div>
+            <button class="nav-toggle" id="navToggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
 
-      <!-- About Me -->
-      <div id="about-me" class="mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
-        <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
-          <div class="p-6 rounded-xl bg-transparent shadow-md border border-white/10">
-            <p class="text-gray-300">
-              As a Computer Science and Engineering graduate, I work across the AI lifecycle — from problem framing and data strategy to model development and production deployment. I enjoy translating research into reliable, high-impact systems and building robust, scalable features for real-world use.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      <div class="cta-gradient p-8 sm:p-12 rounded-xl shadow-2xl text-center md:text-left">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-3">Let's build something intelligent</h2>
-        <p class="text-gray-300 mb-6 max-w-xl mx-auto md:mx-0">Interested in collaborating or hiring? I'm open to roles where ML makes a real product impact.</p>
-
-        <div class="flex flex-wrap justify-center md:justify-start items-center gap-4">
-          <a href="mailto:bchandrashekhar619@gmail.com" class="email-button">
-            <p>Email Me</p>
-            <svg viewBox="0 0 24 24" fill="currentColor" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
-            </svg>
-          </a>
-          <a href="public/Chandrashekhar_B_Resume.pdf" target="_blank" download class="cssbuttons-io-button">
-            Download Resume
-            <div class="icon">
-              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" fill="currentColor"></path>
-              </svg>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-label">⚡ AVAILABLE FOR HIRE</span>
+                <h1>Building <span class="accent">AI Systems</span> That Actually Work</h1>
+                <p class="hero-subtitle">Entry-level AI/ML Developer focused on computer vision and model deployment. I turn research into production-ready solutions.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary" id="primaryCta">
+                        View My Work
+                        <i data-lucide="arrow-down"></i>
+                    </a>
+                    <a href="public/Chandrashekhar_B_Resume.pdf" download="Chandrashekhar_B_Resume.pdf" class="btn btn-secondary">
+                        Download CV
+                        <i data-lucide="download"></i>
+                    </a>
+                </div>
             </div>
-          </a>
+
+            <div class="hero-terminal">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot dot-red"></span>
+                        <span class="terminal-dot dot-yellow"></span>
+                        <span class="terminal-dot dot-green"></span>
+                    </div>
+                    <div class="terminal-content" id="terminalContent"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-  </main>
+    <section id="projects" class="fade-in-section">
+        <div class="section-header">
+            <div class="section-label">SELECTED WORK</div>
+            <h2>Projects That Matter</h2>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project project-tilt">
+                <div class="project-image project-01">
+                    <i data-lucide="scan-face" class="project-image-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Face Recognition System</h3>
+                    <p class="project-desc">Built real-time facial recognition for automated attendance tracking. Custom preprocessing pipeline handles varying lighting and angles reliably.</p>
+                    
+                    <div class="project-highlight">
+                        <div class="project-highlight-value">94%</div>
+                        <div class="project-highlight-label">Accuracy</div>
+                    </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark-bg border-t border-gray-800 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col justify-center items-center text-sm text-gray-500 text-center">
-      <p>&copy; 2025 Chandrashekhar B | Building intelligent systems that make real-world impact.</p>
-    </div>
-  </footer>
+                    <div class="project-stack">
+                        <span class="stack-tag">Python</span>
+                        <span class="stack-tag">OpenCV</span>
+                        <span class="stack-tag">dlib</span>
+                        <span class="stack-tag">CNNs</span>
+                    </div>
 
+                    <div class="project-links">
+                        <a href="https://github.com/chandhu1255" class="project-link">
+                            <i data-lucide="github"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project project-tilt">
+                <div class="project-image project-02">
+                    <i data-lucide="search" class="project-image-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Visual Search with VLLMs</h3>
+                    <p class="project-desc">Integrated Vision-Language Models for natural language queries over images. Fine-tuned embeddings improved retrieval for technical docs.</p>
+                    
+                    <div class="project-highlight">
+                        <div class="project-highlight-value">3.2x</div>
+                        <div class="project-highlight-label">Speed Boost</div>
+                    </div>
+
+                    <div class="project-stack">
+                        <span class="stack-tag">Python</span>
+                        <span class="stack-tag">CLIP</span>
+                        <span class="stack-tag">PyTorch</span>
+                        <span class="stack-tag">FAISS</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/chandhu1255" class="project-link">
+                            <i data-lucide="github"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project project-tilt">
+                <div class="project-image project-03">
+                    <i data-lucide="trending-down" class="project-image-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Customer Churn Prediction</h3>
+                    <p class="project-desc">Binary classification with ensemble methods. Feature engineering identified 5 predictors contributing to 78% of churn decisions.</p>
+                    
+                    <div class="project-highlight">
+                        <div class="project-highlight-value">89%</div>
+                        <div class="project-highlight-label">F1-Score</div>
+                    </div>
+
+                    <div class="project-stack">
+                        <span class="stack-tag">Python</span>
+                        <span class="stack-tag">Scikit-learn</span>
+                        <span class="stack-tag">XGBoost</span>
+                        <span class="stack-tag">Pandas</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/chandhu1255" class="project-link">
+                            <i data-lucide="github"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="fade-in-section">
+        <div class="section-header">
+            <div class="section-label">WORK HISTORY</div>
+            <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">SEP 2023 - NOV 2023</div>
+                <h3 class="timeline-title">AI & Data Science Intern</h3>
+                <p class="timeline-company">Aqmenz Automation Pvt. Ltd.</p>
+                <ul>
+                    <li>Built data preprocessing pipeline that reduced model training time by 40% through automated feature extraction and validation</li>
+                    <li>Integrated 3 ML models into production automation workflows, handling edge cases and error logging</li>
+                    <li>Conducted model evaluation experiments comparing 5+ architectures, documenting findings for team knowledge base</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">DEC 2022 - FEB 2023</div>
+                <h3 class="timeline-title">Python Programming & Application Development</h3>
+                <p class="timeline-company">Technical Hub - Internship Certificate</p>
+                <ul>
+                    <li>Completed intensive internship focused on Python development and application building</li>
+                    <li>Developed real-world applications using Python frameworks and libraries</li>
+                    <li>Gained hands-on experience in software development lifecycle and best practices</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">60 DAYS (480 HOURS)</div>
+                <h3 class="timeline-title">AI Machine Learning Engineer</h3>
+                <p class="timeline-company">Skill India</p>
+                <ul>
+                    <li>Completed comprehensive 480-hour training program in AI and Machine Learning</li>
+                    <li>Covered end-to-end ML pipeline: data preprocessing, model training, evaluation, and deployment</li>
+                    <li>Worked on multiple projects involving supervised learning, neural networks, and model optimization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="fade-in-section">
+        <div class="section-header">
+            <div class="section-label">TECHNICAL STACK</div>
+            <h2>Skills & Tools</h2>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul class="skill-list">
+                    <li>Python (Advanced)</li>
+                    <li>SQL</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>ML/AI Frameworks</h3>
+                <ul class="skill-list">
+                    <li>PyTorch</li>
+                    <li>TensorFlow/Keras</li>
+                    <li>Scikit-learn</li>
+                    <li>OpenCV</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Specializations</h3>
+                <ul class="skill-list">
+                    <li>Computer Vision</li>
+                    <li>CNNs & Deep Learning</li>
+                    <li>Generative AI</li>
+                    <li>Model Evaluation</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Tools & Platforms</h3>
+                <ul class="skill-list">
+                    <li>Git/GitHub</li>
+                    <li>Jupyter Notebooks</li>
+                    <li>Docker (Basic)</li>
+                    <li>AWS/Oracle Cloud</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="fade-in-section">
+        <div class="section-header">
+            <div class="section-label">CREDENTIALS</div>
+            <h2>Certifications</h2>
+        </div>
+
+        <div class="certs-grid">
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+                <div class="cert-info">
+                    <div class="cert-header">
+                        <div>
+                            <h3 class="cert-title">Neural Networks</h3>
+                            <p class="cert-issuer">Coursera</p>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/records/KZ0K31X22XAO" target="_blank" class="cert-link">
+                            View Certificate
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                    <ul class="cert-skills">
+                        <li>Artificial Neural Networks</li>
+                        <li>Supervised Learning</li>
+                        <li>Deep Learning Fundamentals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i data-lucide="cloud"></i>
+                </div>
+                <div class="cert-info">
+                    <div class="cert-header">
+                        <div>
+                            <h3 class="cert-title">OCI Generative AI Professional</h3>
+                            <p class="cert-issuer">Oracle Cloud Infrastructure</p>
+                        </div>
+                        <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=29FFC919F09474BCEACE777D9E5218740595E0D8B42425E5FA21E815C4DB6DE6" target="_blank" class="cert-link">
+                            View Certificate
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                    <ul class="cert-skills">
+                        <li>Large Language Models (LLMs)</li>
+                        <li>OCI Generative AI Service</li>
+                        <li>RAG-based Chatbot Development</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i data-lucide="code-2"></i>
+                </div>
+                <div class="cert-info">
+                    <div class="cert-header">
+                        <div>
+                            <h3 class="cert-title">ML Application Development</h3>
+                            <p class="cert-issuer">Aqmenz Automation Pvt. Ltd.</p>
+                        </div>
+                        <span class="cert-link-disabled">
+                            CIN: U74999KA2018PTC117612
+                        </span>
+                    </div>
+                    <ul class="cert-skills">
+                        <li>Python Libraries (NumPy, Pandas)</li>
+                        <li>Scikit-learn & Keras</li>
+                        <li>ML Model Deployment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i data-lucide="cpu"></i>
+                </div>
+                <div class="cert-info">
+                    <div class="cert-header">
+                        <div>
+                            <h3 class="cert-title">AI Builder Workshop</h3>
+                            <p class="cert-issuer">Airtribe</p>
+                        </div>
+                        <a href="https://www.airtribe.live/workshop/certificate/D9G3EBDG3VO3" target="_blank" class="cert-link">
+                            View Certificate
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                    <ul class="cert-skills">
+                        <li>Agent Models & Frameworks</li>
+                        <li>AI Application Building</li>
+                        <li>Hands-on Development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in-section">
+        <div class="section-header">
+            <div class="section-label">GET IN TOUCH</div>
+            <h2>Let's Work Together</h2>
+        </div>
+
+        <div class="contact-content">
+            <p style="color: var(--text-dim); margin-bottom: 2rem; font-size: 1.1rem;">
+                Currently seeking full-time opportunities in AI/ML development. Open to roles in computer vision, model deployment, or data science.
+            </p>
+
+            <div class="contact-methods">
+                <a href="mailto:bchandrashekhar619@gmail.com" class="contact-method">
+                    <div class="contact-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>bchandrashekhar619@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/chandhu1255" target="_blank" class="contact-method">
+                    <div class="contact-icon">
+                        <i data-lucide="linkedin"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/chandhu1255</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/chandhu1255" target="_blank" class="contact-method">
+                    <div class="contact-icon">
+                        <i data-lucide="github"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>GitHub</h3>
+                        <p>github.com/chandhu1255</p>
+                    </div>
+                </a>
+
+                <div class="contact-method" style="pointer-events: none;">
+                    <div class="contact-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Location</h3>
+                        <p>Bengaluru, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Sticky CTA -->
+    <button class="mobile-fab" id="mobileFab">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <footer>
+        <p>&copy; 2025 Chandrashekhar B.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
